@@ -24,8 +24,11 @@ const NavBar = () => {
                     <Link href={"/login"} className={buttonVariants({ variant: "default" })}>
                         Sign in
                     </Link>
+                </li>
+                <li>
                     <ModeToggle />
                 </li>
+
             </ul>
         </nav>
     );
