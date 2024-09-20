@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-white text-black dark:text-white dark:bg-black">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget ullamcorper turpis, a venenatis felis. Donec in venenatis sapien. Ut volutpat purus at metus maximus, nec egestas eros finibus. Nam lacinia risus a nibh convallis, quis pharetra mi fringilla. Aliquam erat volutpat. Integer sit amet fringilla felis. Cras elementum posuere turpis sit amet consectetur. Ut dictum augue purus, at condimentum turpis euismod quis. Suspendisse sollicitudin fermentum erat, a tristique dolor laoreet at. Proin aliquam orci sed urna consectetur, et scelerisque risus interdum. Curabitur lacinia nisl euismod nulla venenatis, id pharetra enim fringilla. Praesent a orci lorem. Mauris vitae diam quis mi volutpat fringilla sit amet ac nisl. Proin imperdiet metus felis. Vivamus et turpis non risus dapibus lobortis.
 
       Morbi scelerisque aliquet gravida. Etiam auctor quam ut egestas feugiat. Proin dapibus orci quis mauris auctor scelerisque. Nulla ac justo tempor, volutpat felis in, egestas mi. Mauris gravida eros risus, nec vestibulum enim malesuada non. Phasellus vel est non ante sollicitudin laoreet. Nulla facilisi. Suspendisse potenti. Nam ac velit metus. Donec id nisi felis. Suspendisse potenti. Mauris sit amet sapien malesuada, porttitor erat nec, eleifend odio. Ut cursus ipsum eros, nec sollicitudin metus ullamcorper vitae.

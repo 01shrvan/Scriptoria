@@ -1,0 +1,54 @@
+"use client"
+import React, { useEffect, useState } from 'react'
+
+interface LinkType {
+    id: string
+    text: string
+
+}
+
+function cn(...classes: (string | false | null | undefined)[]) {
+    return classes.filter(Boolean).join(' ');
+}
+
+const Onthispage = ({ htmlContent, className }: { htmlContent: string, className: string }) => {
+    const [links, setLinks] = useState<null | LinkType[]>(null);
+
+    useEffect(() => {
+        const temp = document.createElement("div");
+        temp.innerHTML = htmlContent
+
+        const headings = temp.querySelectorAll('h2, h3');
+
+        const generatedLinks: LinkType[] = [];
+        headings.forEach((heading, index) => {
+            const id = heading.id || 'heading-${index}';
+            heading.id = id;
+
+
+            generatedLinks.push({
+                id: id,
+                text: (heading as HTMLElement).innerText
+            })
+        })
+
+        setLinks(generatedLinks);
+    }, [htmlContent])
+
+    return (
+        <div className={cn('hidden md:block', className)}>
+            <div className="sticky">
+                <h2>On this page</h2>
+                <ul className='not-prose'>
+                    {links && links.map((link) => {
+                        return <li key={link.id} className='pt-1'>
+                            <a href={`#${link.id}`}>{link.text.slice(0, 50)}</a>
+                        </li>
+                    })}
+                </ul>
+            </div>
+        </div>
+    )
+}
+
+export default Onthispage
