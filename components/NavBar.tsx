@@ -17,7 +17,7 @@ import {
 
 const NavBar = () => {
     return (
-        <nav className='h-16 bg-background/50 sticky top-0 -b px-4 backdrop-blur-md flex items-center justify-between'>
+        <nav className='h-16 bg-background/50 sticky top-0 -b px-4 backdrop-blur-md flex items-center justify-between z-10'>
             <Link href={'/'}>
                 <div className='-ml-8'>
                     <Image src='/Logo.png' alt='Scriptoria Logo' width={200} height={50} />

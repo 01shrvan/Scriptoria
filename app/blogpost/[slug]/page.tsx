@@ -5,7 +5,7 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import rehypeSlug from 'rehype-slug';
 import rehypeStringify from "rehype-stringify";
-import rehypeHighlight from "rehype-highlight";
+// import rehypeHighlight from "rehype-highlight"; 
 import matter from "gray-matter";
 import fs from "fs";
 import Onthispage from '@/components/Onthispage';
@@ -26,7 +26,7 @@ export default async function BlogPage({ params }: { params: { slug: string } })
         .use(rehypeStringify)
         .use(rehypeSlug)
         .use(rehypePrettyCode, {
-            theme: "github-dark",
+            theme: "material-theme",
             transformers: [
                 transformerCopyButton({
                     visibility: 'always',
@@ -45,7 +45,7 @@ export default async function BlogPage({ params }: { params: { slug: string } })
     return (
         <MaxWidthWrapper className='prose dark:prose-invert'>
             <div className='flex flex-col md:flex-row'>
-                <div className='px-4 md:px-16 md:w-3/4'>
+                <div className='px-4 md:px-16 md:w-3/4 mt-16'> {/* Added margin-top here */}
                     <h1>{data.title}</h1>
                     <div dangerouslySetInnerHTML={{ __html: htmlContent }}></div>
                 </div>
@@ -68,7 +68,7 @@ export async function generateMetadata(
     const { data } = matter(fileContent);
 
     return {
-        title: `${data.title} - ProgrammingWithHarry`,
+        title: `${data.title} - Scriptoria`,
         description: data.description,
     };
 }
