@@ -1,10 +1,12 @@
 "use client";
+import LoadingBar from 'react-top-loading-bar'
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Button, buttonVariants } from './ui/button';
 import { ModeToggle } from './theme-toggle';
 import { Menu } from 'lucide-react';
+import { usePathname } from 'next/navigation'
 import {
     Sheet,
     SheetContent,
@@ -16,8 +18,35 @@ import {
 
 
 const NavBar = () => {
+    const [progress, setProgress] = useState(0)
+    const pathname = usePathname();
+    useEffect(() => {
+        setProgress(30)
+
+        setTimeout(() => {
+            setProgress(70)
+        }, 100);
+
+        setTimeout(() => {
+            setProgress(100)
+        }, 800);
+
+    }, [pathname])
+
+    useEffect(() => {
+        setTimeout(() => {
+            setProgress(0)
+        }, 900);
+    }, [])
+
+
     return (
         <nav className='h-16 bg-background/50 sticky top-0 -b px-4 backdrop-blur-md flex items-center justify-between z-10'>
+            <LoadingBar
+                color='#D8BFD8'
+                progress={progress}
+                onLoaderFinished={() => setProgress(0)}
+            />
             <Link href={'/'}>
                 <div className='-ml-8'>
                     <Image src='/Logo.png' alt='Scriptoria Logo' width={200} height={50} />
