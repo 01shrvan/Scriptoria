@@ -66,7 +66,7 @@ const NavBar = () => {
                     <Link href='/contact'>Contact</Link>
                 </li>
                 <li className='px-4 space-x-2'>
-                    <Link href={"/login"} className={buttonVariants({ variant: "default" })}>
+                    <Link href={"/sign-in"} className={buttonVariants({ variant: "default" })}>
                         Sign in
                     </Link>
                 </li>

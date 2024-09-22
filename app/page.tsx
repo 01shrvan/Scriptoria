@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import Typed from 'typed.js';
+import Link from "next/link";
 
 export default function Home() {
   const el = useRef(null);
@@ -56,7 +57,7 @@ export default function Home() {
           </div>
           <div className="w-full mt-4 lg:mt-0 lg:w-1/2">
             <img
-              src="https://www.creative-tim.com/twcomponents/svg/website-designer-bro-purple.svg"
+              src="2.svg"
               alt="Illustration of a website designer working on a blogging platform"
               className="w-full h-full max-w-md mx-auto"
             />
@@ -94,6 +95,22 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <footer className="w-full py-6 bg-gray-900">
+          <div className="container px-4 md:px-6 mx-auto">
+            <div className="flex flex-col items-center justify-center text-center gap-2 md:flex-row md:justify-between md:items-center">
+              <p className="text-sm text-gray-400">
+                © 2024 Scriptoria. Proudly crafted with 💻 & ❤️ by
+                <span className="ml-1 text-gray-300 font-semibold hover:text-gray-100 transition-colors duration-300 ease-in-out">
+                  shrvan!
+                </span>
+              </p>
+              <p className="text-xs text-gray-500">
+                A solo venture dedicated to supporting indie developers! 🌱
+              </p>
+            </div>
+          </div>
+        </footer>
       </main>
     </>
   );
