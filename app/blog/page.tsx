@@ -1,10 +1,10 @@
-// import SampleBlogs from "@/config/sampleblogs";
 import React from "react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import fs, { readFileSync } from "fs";
 import matter from "gray-matter";
 import Link from "next/link";
 import { Metadata } from "next";
+import Image from "next/image";
 
 interface BlogType {
   slug: string;
@@ -42,7 +42,7 @@ const BlogList = () => {
             key={index}
             className="shadow-lg rounded-lg overflow-hidden"
           >
-            <img
+            <Image
               className="w-full h-64 object-cover object-top"
               src={blog.imageUrl ? blog.imageUrl : "/blogimg.jpg"}
               alt={blog.title}
