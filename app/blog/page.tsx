@@ -1,6 +1,5 @@
-// import SampleBlogs from "@/config/sampleblogs";
 import React from "react";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import fs, { readFileSync } from "fs";
 import matter from "gray-matter";
 import Link from "next/link";
@@ -66,7 +65,7 @@ const BlogList = () => {
 
 export const metadata: Metadata = {
   title: 'Blogs - Scriptoria',
-  description: 'A comprehensive blog for coders of all levels, from beginners to advanced. Explore tutorials, tips, and insights on a wide range of programming languages and technologies. Stay up-to-date with the latest trends in software development, learn best practices, and enhance your coding skills with in-depth articles and guides.',
+  description: 'A comprehensive blog for coders of all levels, offering tutorials, tips, and insights on various programming languages and technologies. Stay updated on software development trends, learn best practices, and enhance your coding skills with in-depth guides.',
 }
 
 

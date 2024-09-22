@@ -1,26 +1,100 @@
-import Image from "next/image";
+"use client";
+import { useEffect, useRef } from "react";
+import Typed from 'typed.js';
 
 export default function Home() {
+  const el = useRef(null);
+
+  useEffect(() => {
+    const options = {
+      strings: ['<i>Scriptoria</i> Blogging.', '&amp; Markdown', 'Open Source'],
+      typeSpeed: 50,
+      backSpeed: 30,
+      backDelay: 1000,
+      loop: true,
+    };
+
+    const typed = new Typed(el.current, options);
+    return () => {
+      typed.destroy();
+    };
+  }, []);
+
   return (
-    <main className="bg-white text-black dark:text-white dark:bg-black">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget ullamcorper turpis, a venenatis felis. Donec in venenatis sapien. Ut volutpat purus at metus maximus, nec egestas eros finibus. Nam lacinia risus a nibh convallis, quis pharetra mi fringilla. Aliquam erat volutpat. Integer sit amet fringilla felis. Cras elementum posuere turpis sit amet consectetur. Ut dictum augue purus, at condimentum turpis euismod quis. Suspendisse sollicitudin fermentum erat, a tristique dolor laoreet at. Proin aliquam orci sed urna consectetur, et scelerisque risus interdum. Curabitur lacinia nisl euismod nulla venenatis, id pharetra enim fringilla. Praesent a orci lorem. Mauris vitae diam quis mi volutpat fringilla sit amet ac nisl. Proin imperdiet metus felis. Vivamus et turpis non risus dapibus lobortis.
+    <>
+      <main>
+        <section className="container px-4 py-10 mx-auto lg:h-128 lg:space-x-8 lg:flex lg:items-center">
+          <div className="w-full text-center lg:text-left lg:w-1/2 lg:-mt-8">
+            <h1 className="text-3xl leading-snug text-gray-800 dark:text-gray-200 md:text-4xl">
+              A <span className="font-semibold">Markdown Blogging Platform</span> for Creators <br className="hidden lg:block" />
+              to Share Their <span className="font-semibold underline decoration-primary"><span ref={el} /></span>
+            </h1>
+            <p className="mt-4 text-lg text-gray-500 dark:text-gray-300">
+              Open source blog templates to <br className="hidden lg:block" /> kickstart your writing journey!
+            </p>
+            <div className="mt-6 bg-transparent border rounded-lg dark:border-gray-700 lg:w-2/3 focus-within:border-primary focus-within:ring focus-within:ring-primary dark:focus-within:border-primary focus-within:ring-opacity-20">
+              <form action="https://www.scriptoria.com/search" className="flex flex-wrap justify-between md:flex-row">
+                <input
+                  type="search"
+                  name="query"
+                  placeholder="Search Blog Posts"
+                  required
+                  aria-label="Search Blog Posts"
+                  className="flex-1 h-10 px-4 m-1 text-gray-700 placeholder-gray-400 bg-transparent border-none appearance-none lg:h-12 dark:text-gray-200 focus:outline-none focus:placeholder-transparent focus:ring-0"
+                />
+                <button
+                  type="submit"
+                  aria-label="Search"
+                  className="flex items-center dark:bg-gray-800 justify-center w-full p-2 m-1 text-white transition-colors duration-300 transform rounded-lg lg:w-12 lg:h-12 lg:p-0 bg-primary hover:bg-primary/70 focus:outline-none focus:bg-primary/70"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </div>
+          <div className="w-full mt-4 lg:mt-0 lg:w-1/2">
+            <img
+              src="https://www.creative-tim.com/twcomponents/svg/website-designer-bro-purple.svg"
+              alt="Illustration of a website designer working on a blogging platform"
+              className="w-full h-full max-w-md mx-auto"
+            />
+          </div>
+        </section>
 
-      Morbi scelerisque aliquet gravida. Etiam auctor quam ut egestas feugiat. Proin dapibus orci quis mauris auctor scelerisque. Nulla ac justo tempor, volutpat felis in, egestas mi. Mauris gravida eros risus, nec vestibulum enim malesuada non. Phasellus vel est non ante sollicitudin laoreet. Nulla facilisi. Suspendisse potenti. Nam ac velit metus. Donec id nisi felis. Suspendisse potenti. Mauris sit amet sapien malesuada, porttitor erat nec, eleifend odio. Ut cursus ipsum eros, nec sollicitudin metus ullamcorper vitae.
-
-      Mauris vel venenatis lorem. Suspendisse sodales auctor elit eget sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris a venenatis eros. Curabitur non venenatis ligula. Cras sit amet sapien felis. In nec felis nec sem convallis dictum ut sed turpis. Nulla efficitur, eros eu tincidunt tincidunt, purus erat iaculis orci, vitae gravida velit libero ac nulla. Aenean gravida cursus odio, nec interdum velit gravida et. Vivamus dictum tellus sed volutpat congue. Suspendisse eget erat id elit ornare posuere. Nunc porta ipsum eu lacus sodales posuere. Praesent vitae nisl id est laoreet cursus sed eu libero. Nulla id egestas magna. In vitae eros ante.
-
-      Aenean convallis nulla et dolor scelerisque suscipit. Curabitur tincidunt purus risus, nec tincidunt neque elementum nec. Donec ac gravida nibh. Mauris pretium, est quis suscipit convallis, justo lacus bibendum nisi, ac faucibus ipsum nisi nec libero. Phasellus eget sollicitudin libero. Nam fermentum, nisi non feugiat gravida, arcu elit pellentesque orci, a rhoncus est augue non purus. Sed eleifend urna sapien, vitae feugiat nunc varius eu. Nam viverra interdum tortor, ut volutpat tortor sodales nec. Curabitur fermentum faucibus nulla, eget pretium eros ultrices ut. In efficitur feugiat fermentum.
-
-      Vivamus facilisis justo ut dolor fermentum, nec vehicula risus rutrum. Proin sed nisl in nulla vehicula sagittis. Curabitur malesuada massa nulla, a scelerisque sapien fermentum non. Morbi vitae turpis non metus dictum posuere. Integer congue arcu ut orci rutrum tristique. Aenean pharetra libero ut erat aliquet, non congue lacus accumsan. Aliquam bibendum ligula quis leo faucibus finibus. Curabitur bibendum eros in nisi efficitur, eget ultrices metus consectetur. Ut malesuada mauris id tellus dictum, sed sollicitudin leo egestas. Fusce mollis leo at nisl efficitur, ut cursus odio euismod. Praesent at sapien quis risus aliquam feugiat vel sed tortor. Donec sagittis nulla at sodales finibus. Mauris dictum tempor ligula, nec sollicitudin augue gravida eget.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget ullamcorper turpis, a venenatis felis. Donec in venenatis sapien. Ut volutpat purus at metus maximus, nec egestas eros finibus. Nam lacinia risus a nibh convallis, quis pharetra mi fringilla. Aliquam erat volutpat. Integer sit amet fringilla felis. Cras elementum posuere turpis sit amet consectetur. Ut dictum augue purus, at condimentum turpis euismod quis. Suspendisse sollicitudin fermentum erat, a tristique dolor laoreet at. Proin aliquam orci sed urna consectetur, et scelerisque risus interdum. Curabitur lacinia nisl euismod nulla venenatis, id pharetra enim fringilla. Praesent a orci lorem. Mauris vitae diam quis mi volutpat fringilla sit amet ac nisl. Proin imperdiet metus felis. Vivamus et turpis non risus dapibus lobortis.
-
-      Morbi scelerisque aliquet gravida. Etiam auctor quam ut egestas feugiat. Proin dapibus orci quis mauris auctor scelerisque. Nulla ac justo tempor, volutpat felis in, egestas mi. Mauris gravida eros risus, nec vestibulum enim malesuada non. Phasellus vel est non ante sollicitudin laoreet. Nulla facilisi. Suspendisse potenti. Nam ac velit metus. Donec id nisi felis. Suspendisse potenti. Mauris sit amet sapien malesuada, porttitor erat nec, eleifend odio. Ut cursus ipsum eros, nec sollicitudin metus ullamcorper vitae.
-
-      Mauris vel venenatis lorem. Suspendisse sodales auctor elit eget sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris a venenatis eros. Curabitur non venenatis ligula. Cras sit amet sapien felis. In nec felis nec sem convallis dictum ut sed turpis. Nulla efficitur, eros eu tincidunt tincidunt, purus erat iaculis orci, vitae gravida velit libero ac nulla. Aenean gravida cursus odio, nec interdum velit gravida et. Vivamus dictum tellus sed volutpat congue. Suspendisse eget erat id elit ornare posuere. Nunc porta ipsum eu lacus sodales posuere. Praesent vitae nisl id est laoreet cursus sed eu libero. Nulla id egestas magna. In vitae eros ante.
-
-      Aenean convallis nulla et dolor scelerisque suscipit. Curabitur tincidunt purus risus, nec tincidunt neque elementum nec. Donec ac gravida nibh. Mauris pretium, est quis suscipit convallis, justo lacus bibendum nisi, ac faucibus ipsum nisi nec libero. Phasellus eget sollicitudin libero. Nam fermentum, nisi non feugiat gravida, arcu elit pellentesque orci, a rhoncus est augue non purus. Sed eleifend urna sapien, vitae feugiat nunc varius eu. Nam viverra interdum tortor, ut volutpat tortor sodales nec. Curabitur fermentum faucibus nulla, eget pretium eros ultrices ut. In efficitur feugiat fermentum.
-
-      Vivamus facilisis justo ut dolor fermentum, nec vehicula risus rutrum. Proin sed nisl in nulla vehicula sagittis. Curabitur malesuada massa nulla, a scelerisque sapien fermentum non. Morbi vitae turpis non metus dictum posuere. Integer congue arcu ut orci rutrum tristique. Aenean pharetra libero ut erat aliquet, non congue lacus accumsan. Aliquam bibendum ligula quis leo faucibus finibus. Curabitur bibendum eros in nisi efficitur, eget ultrices metus consectetur. Ut malesuada mauris id tellus dictum, sed sollicitudin leo egestas. Fusce mollis leo at nisl efficitur, ut cursus odio euismod. Praesent at sapien quis risus aliquam feugiat vel sed tortor. Donec sagittis nulla at sodales finibus. Mauris dictum tempor ligula, nec sollicitudin augue gravida eget.
-    </main>
+        {/* Popular Blog Categories */}
+        <section className="text-white body-font">
+          <div className="container px-5 py-24 mx-auto">
+            <h2 className="text-3xl font-semibold text-center text-gray-800 dark:text-white mb-10">
+              Explore Popular Blog Categories
+            </h2>
+            <div className="flex flex-wrap -m-4">
+              <div className="p-4 lg:w-1/3">
+                <div className="h-full bg-gray-900 bg-opacity-75 px-6 pt-10 pb-16 rounded-lg overflow-hidden text-center relative">
+                  <h2 className="tracking-widest text-xs title-font font-medium text-white mb-1">MARKDOWN TUTORIALS</h2>
+                  <h1 className="title-font sm:text-xl text-lg font-medium text-white mb-3">Mastering Markdown for Beginners</h1>
+                  <p className="leading-relaxed mb-3">Learn the basics of markdown to write cleaner, more efficient blog posts with ease.</p>
+                </div>
+              </div>
+              <div className="p-4 lg:w-1/3">
+                <div className="h-full bg-gray-900 bg-opacity-75 px-6 pt-10 pb-16 rounded-lg overflow-hidden text-center relative">
+                  <h2 className="tracking-widest text-xs title-font font-medium text-white mb-1">WEB DEVELOPMENT</h2>
+                  <h1 className="title-font sm:text-xl text-lg font-medium text-white mb-3">Building a Blog with Markdown</h1>
+                  <p className="leading-relaxed mb-3">Use markdown to build efficient, scalable blogs with minimal code and clean formatting.</p>
+                </div>
+              </div>
+              <div className="p-4 lg:w-1/3">
+                <div className="h-full bg-gray-900 bg-opacity-75 px-6 pt-10 pb-16 rounded-lg overflow-hidden text-center relative">
+                  <h2 className="tracking-widest text-xs title-font font-medium text-white mb=1">BLOGGING TIPS</h2>
+                  <h1 className="title-font sm:text-xl text-lg font-medium text-white mb=3">Optimizing Your Blog for SEO</h1>
+                  <p className="leading-relaxed mb=3">Learn the best practices to optimize your markdown blogs for SEO and increase your readership.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }

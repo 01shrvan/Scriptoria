@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react'
 interface LinkType {
     id: string
     text: string
-
 }
 
 function cn(...classes: (string | false | null | undefined)[]) {
@@ -42,7 +41,9 @@ const Onthispage = ({ htmlContent, className }: { htmlContent: string, className
                 <ul className='not-prose'>
                     {links && links.map((link) => {
                         return <li key={link.id} className='pt-1'>
-                            <a href={`#${link.id}`}>{link.text.slice(0, 50)}</a>
+                            <a href={`#${link.id}`}>{link.text.slice(0, 50)}
+                                {(link.text.length > 50) ? "..." : ""}
+                            </a>
                         </li>
                     })}
                 </ul>
