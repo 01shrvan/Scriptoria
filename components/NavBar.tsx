@@ -39,7 +39,7 @@ const NavBar = () => {
     return (
         <nav className='h-16 bg-background/50 sticky top-0 -b px-4 backdrop-blur-md flex items-center justify-between z-10'>
             <LoadingBar
-                color='#D8BFD8'
+                color='hsl(0deg 0% 94.9%)'
                 progress={progress}
                 onLoaderFinished={() => setProgress(0)}
             />
